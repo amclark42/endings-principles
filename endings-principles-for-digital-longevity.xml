@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+  schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Endings Principles for Digital Longevity</title>
+        <author>
+          <orgName>The Endings Project Team</orgName>
+        </author>
+      </titleStmt>
+      <publicationStmt>
+        <p>Publication Information</p>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Endings Principles for Digital Longevity</title>
+          <edition>Version 2.2.1</edition>
+          <date when="2023-03-03"/>
+          <author>
+            <orgName>The Endings Project Team</orgName>
+          </author>
+          <ptr target="https://endings.uvic.ca/principles.html"/>
+          <note>
+            <p>Available under a <ref target="https://creativecommons.org/licenses/by/4.0/deed.en">
+              Creative Commons BY Attribution 4.0 International License</ref>.</p>
+          </note>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+        <taxonomy>
+          <category xml:id="cat.archiving" n="Archiving">
+            <catDesc>This principle anticipates long-term preservation of the projects’ components.</catDesc>
+            
+            <category xml:id="cat.lockss" n="Lots of Copies Keep Stuff Safe (LOCKSS)">
+              <catDesc>This principle encourages copying resources such that some version of them might 
+                survive.</catDesc>
+            </category>
+            <category xml:id="cat.provenance" n="Provenance">
+              <catDesc>This principle supports record-keeping of the history of the project.</catDesc>
+            </category>
+          </category>
+          
+          <category xml:id="cat.maintainability" n="Maintainability">
+            <catDesc>This principle encourages the upkeep of a project’s components, keeping them in 
+              sync during the project’s lifecycle.</catDesc>
+            
+            <category xml:id="cat.open-source" n="Open source">
+              <catDesc>This principle participates in open source ecosystems, built on well-documented, 
+                thoroughly-tested, and widely-adopted technologies.</catDesc>
+            </category>
+          </category>
+          
+          <category xml:id="cat.usability" n="Usability">
+            <catDesc>This principle ensures consistent, reliable, legible use of the project’s 
+              end-products.</catDesc>
+            
+            <category xml:id="cat.reuse" n="Reuse">
+              <catDesc>This principle supports reuse of materials outside of the project’s original 
+                context.</catDesc>
+            </category>
+            <category xml:id="cat.transparency" n="Transparency">
+              <catDesc>This principle encourages discovery of and engagement with materials.</catDesc>
+            </category>
+          </category>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <head>Principles</head>
+      <head type="sub">Endings Principles for Digital Longevity</head>
+      <p>Version 2.2.1, 2023-03-03</p>
+    </front>
+    <body>
+      <p>We divide digital projects into five primary components:</p>
+      <list>
+        <item><ref target="#data">Data</ref></item>
+        <item><ref target="#documentation">Documentation</ref></item>
+        <item><ref target="#processing">Processing</ref></item>
+        <item><ref target="#products">Products</ref></item>
+        <item><ref target="#release-management">Release management</ref></item>
+      </list>
+      
+      <div xml:id="data">
+        <head n="1">Data</head>
+        <p>Data is the expression of the source information, knowledge, and expertise of our researchers. 
+          The following principles apply to data:</p>
+        <list>
+          <item n="1.1" ana="#cat.reuse #cat.transparency #cat.archiving #cat.open-source">
+            Data is stored only in formats that conform to open standards and that are amenable to 
+            processing (TEI XML, GML, ODF, TXT).</item>
+          <item n="1.2" ana="#cat.lockss #cat.transparency #cat.provenance">
+            Data is subject to version control (Subversion, Git).</item>
+          <item n="1.3" ana="#cat.maintainability">
+            Data is continually subject to validation and diagnostic analysis.</item>
+        </list>
+      </div>
+      
+      <div xml:id="documentation">
+        <head n="2">Documentation</head>
+        <list>
+          <item n="2.1" ana="#cat.archiving #cat.maintainability #cat.transparency #cat.reuse">
+            Data models, including field names, descriptions, and controlled values, should be clearly 
+            documented in a static document that is maintained with the data and forms part of the 
+            products.</item>
+          <item n="2.2" ana="#cat.archiving #cat.reuse #cat.transparency #cat.open-source">
+            All rights and intellectual property issues should be clearly documented. Where possible the 
+            Data and Products should be released under open licenses (Creative Commons, GNU, BSD, MPL).</item>
+        </list>
+      </div>
+      
+      <div xml:id="processing">
+        <head n="3">Processing</head>
+        <p>Processing code is written and maintained by the project technical staff, and is also subject 
+          to version control. Processing code provides all the following functions:</p>
+        <list>
+          <item n="3.1" ana="#cat.maintainability #cat.usability">
+            <term>Relentless validation</term>: all processing includes validation/linting of all inputs 
+            and outputs and all validation errors should exit the process and prevent further execution 
+            until the errors are resolved.</item>
+          <item n="3.2" ana="#cat.maintainability">
+            <term>Continuous integration</term>: any change to the source data requires an entire 
+            rebuild of the site (triggered automatically where possible).</item>
+          <item n="3.3" ana="#cat.maintainability">
+            Code is contingent: while code is not expected to have significant longevity, wherever 
+            possible, all code should follow Endings principles for data and products.</item>
+        </list>
+      </div>
+      
+      <div xml:id="products">
+        <head n="4">Products</head>
+        <p>Products are the project outputs intended for end-users, typically in the form of websites or 
+          print documents. The following principles apply to products intended for the web:</p>
+        <list>
+          <item n="4.1" ana="#cat.archiving #cat.maintainability">
+            No dependence on server-side software: build a static website with no databases, no PHP, no 
+            Python.</item>
+          <item n="4.2" ana="#cat.archiving #cat.maintainability">
+            No boutique or fashionable technologies: use only standards with support across all 
+            platforms, whose long-term viability is assured. Our choices are HTML5, JavaScript, and CSS.</item>
+          <item n="4.3" ana="#cat.archiving #cat.maintainability #cat.usability">
+            No dependence on external libraries or services: no JQuery, no AngularJS, no Bootstrap, no 
+            Google Search.</item>
+          <item n="4.4" ana="#cat.archiving #cat.usability">
+            No query strings: every entity in the site has a unique page with a simple URL that will 
+            function on any domain or IP address.</item>
+          <item n="4.5" ana="#cat.archiving #cat.lockss #cat.reuse #cat.transparency">
+            Inclusion of data: every site should include a documented copy of the source data, so that 
+            users of the site can repurpose the work easily.</item>
+          <item n="4.6" ana="#cat.archiving #cat.lockss">
+            Massive redundancy: every page contains all the components it needs, so that it will 
+            function without the rest of the site if necessary, even though doing so means duplicating 
+            information across the site.</item>
+          <item n="4.7" ana="#cat.archiving #cat.usability">
+            Graceful failure: every page should still function effectively even in the absence of 
+            JavaScript or CSS support.</item>
+        </list>
+        <p>These principles are tempered by the following concessions:</p>
+        <list>
+          <item n="4.8" ana="#cat.usability">
+            Once a fully-working static site is achieved, it may be enhanced by the use of other 
+            services such as a server-side indexing tool (Solr, eXist) to support searching and similar 
+            functionality.</item>
+          <item n="4.9" ana="#cat.usability">
+            The use of an external library may be necessary to support a specific function that is too 
+            complex to be coded locally (such as mapping or cryptography). Any such libraries must be 
+            open-source and widely-used, and must not themselves have dependencies.</item>
+        </list>
+      </div>
+      
+      <div xml:id="release-management">
+        <head n="5">Release management</head>
+        <p>Release management handles the public release of products. These principles apply to release 
+          management:</p>
+        <list>
+          <item n="5.1" ana="#cat.maintainability #cat.provenance">
+            Releases should be periodical and carefully planned. The “rolling release” model should be 
+            avoided.</item>
+          <item n="5.2" ana="#cat.archiving #cat.maintainability">
+            A release should only be made when the entire product set is coherent, consistent, and 
+            complete (passing all validation and diagnostic tests).</item>
+          <item n="5.3" ana="#cat.archiving #cat.maintainability #cat.provenance">
+            Like editions of print works, each release of a web resource should be clearly identified on 
+            every page by its build date and some kind of version number.</item>
+          <item n="5.4" ana="#cat.provenance #cat.usability #cat.transparency">
+            Web resources should include detailed instructions for citation, so that end-users can 
+            unambiguously cite a specific page from a specific edition.</item>
+          <item n="5.5" ana="#cat.archiving #cat.transparency #cat.usability">
+            URLs for individual resources within a digital publication should persist across editions. 
+            Any moved, retired, or deleted resources no longer available at a previously accessible URL 
+            should be redirected appropriately.</item>
+        </list>
+      </div>
+    </body>
+  </text>
+</TEI>

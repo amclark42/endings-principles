@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Endings Principles for Digital Longevity</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <style>
+          body {
+            font-size: 1.15rem;
+          }
+          li {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+          }
+          ol ul {
+            margin-top: 0.5rem;
+          }
+          li li {
+            font-size: 1.15rem;
+            margin-bottom: 0;
+          }
+        </style>
+   </head>
+   <body>
+      
+      <p>We divide digital projects into five primary components:</p>
+      
+      <ol>
+         
+         <li><a href="#data">Data</a></li>
+         
+         <li><a href="#documentation">Documentation</a></li>
+         
+         <li><a href="#processing">Processing</a></li>
+         
+         <li><a href="#products">Products</a></li>
+         
+         <li><a href="#release-management">Release management</a></li>
+         </ol>
+      
+      
+      <div id="data">
+         
+         <h2>Data</h2>
+         
+         <p>Data is the expression of the source information, knowledge, and expertise of our
+            researchers. 
+            The following principles apply to data:</p>
+         
+         <ol>
+            
+            <li>
+               Data is stored only in formats that conform to open standards and that are amenable
+               to 
+               processing (TEI XML, GML, ODF, TXT).
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Open source:</strong> This principle participates in open source ecosystems, built on well-documented, thoroughly-tested,
+                     and widely-adopted technologies.</li>
+                  <li><strong>Reuse:</strong> This principle supports reuse of materials outside of the project’s original context.</li>
+                  <li><strong>Transparency:</strong> This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            
+            <li>
+               Data is subject to version control (Subversion, Git).
+               <ul>
+                  <li><strong>Lots of Copies Keep Stuff Safe (LOCKSS):</strong> This principle encourages copying resources such that some version of them might survive.</li>
+                  <li><strong>Provenance:</strong> This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Transparency:</strong> This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            
+            <li>
+               Data is continually subject to validation and diagnostic analysis.
+               <ul>
+                  <li><strong>Maintainability:</strong> This principle encourages the upkeep of a project’s components, keeping them in sync
+                     during the project’s lifecycle. This principle participates in open source ecosystems,
+                     built on well-documented, thoroughly-tested, and widely-adopted technologies.</li>
+               </ul>
+            </li>
+            </ol>
+         </div>
+      
+      
+      <div id="documentation">
+         
+         <h2>Documentation</h2>
+         
+         <ol>
+            
+            <li>
+               Data models, including field names, descriptions, and controlled values, should be
+               clearly 
+               documented in a static document that is maintained with the data and forms part of
+               the 
+               products.
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Maintainability:</strong> This principle encourages the upkeep of a project’s components, keeping them in sync
+                     during the project’s lifecycle. This principle participates in open source ecosystems,
+                     built on well-documented, thoroughly-tested, and widely-adopted technologies.</li>
+                  <li><strong>Reuse:</strong> This principle supports reuse of materials outside of the project’s original context.</li>
+                  <li><strong>Transparency:</strong> This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            
+            <li>
+               All rights and intellectual property issues should be clearly documented. Where possible
+               the 
+               Data and Products should be released under open licenses (Creative Commons, GNU, BSD,
+               MPL).
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Open source:</strong> This principle participates in open source ecosystems, built on well-documented, thoroughly-tested,
+                     and widely-adopted technologies.</li>
+                  <li><strong>Reuse:</strong> This principle supports reuse of materials outside of the project’s original context.</li>
+                  <li><strong>Transparency:</strong> This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            </ol>
+         </div>
+      
+      
+      <div id="processing">
+         
+         <h2>Processing</h2>
+         
+         <p>Processing code is written and maintained by the project technical staff, and is also
+            subject 
+            to version control. Processing code provides all the following functions:</p>
+         
+         <ol>
+            
+            <li>
+               Relentless validation: all processing includes validation/linting of all inputs 
+               and outputs and all validation errors should exit the process and prevent further
+               execution 
+               until the errors are resolved.
+               <ul>
+                  <li><strong>Maintainability:</strong> This principle encourages the upkeep of a project’s components, keeping them in sync
+                     during the project’s lifecycle. This principle participates in open source ecosystems,
+                     built on well-documented, thoroughly-tested, and widely-adopted technologies.</li>
+                  <li><strong>Usability:</strong> This principle ensures consistent, reliable, legible use of the project’s end-products.
+                     This principle supports reuse of materials outside of the project’s original context.
+                     This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            
+            <li>
+               Continuous integration: any change to the source data requires an entire 
+               rebuild of the site (triggered automatically where possible).
+               <ul>
+                  <li><strong>Maintainability:</strong> This principle encourages the upkeep of a project’s components, keeping them in sync
+                     during the project’s lifecycle. This principle participates in open source ecosystems,
+                     built on well-documented, thoroughly-tested, and widely-adopted technologies.</li>
+               </ul>
+            </li>
+            
+            <li>
+               Code is contingent: while code is not expected to have significant longevity, wherever
+               
+               possible, all code should follow Endings principles for data and products.
+               <ul>
+                  <li><strong>Maintainability:</strong> This principle encourages the upkeep of a project’s components, keeping them in sync
+                     during the project’s lifecycle. This principle participates in open source ecosystems,
+                     built on well-documented, thoroughly-tested, and widely-adopted technologies.</li>
+               </ul>
+            </li>
+            </ol>
+         </div>
+      
+      
+      <div id="products">
+         
+         <h2>Products</h2>
+         
+         <p>Products are the project outputs intended for end-users, typically in the form of
+            websites or 
+            print documents. The following principles apply to products intended for the web:</p>
+         
+         <ol>
+            
+            <li>
+               No dependence on server-side software: build a static website with no databases, no
+               PHP, no 
+               Python.
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Maintainability:</strong> This principle encourages the upkeep of a project’s components, keeping them in sync
+                     during the project’s lifecycle. This principle participates in open source ecosystems,
+                     built on well-documented, thoroughly-tested, and widely-adopted technologies.</li>
+               </ul>
+            </li>
+            
+            <li>
+               No boutique or fashionable technologies: use only standards with support across all
+               
+               platforms, whose long-term viability is assured. Our choices are HTML5, JavaScript,
+               and CSS.
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Maintainability:</strong> This principle encourages the upkeep of a project’s components, keeping them in sync
+                     during the project’s lifecycle. This principle participates in open source ecosystems,
+                     built on well-documented, thoroughly-tested, and widely-adopted technologies.</li>
+               </ul>
+            </li>
+            
+            <li>
+               No dependence on external libraries or services: no JQuery, no AngularJS, no Bootstrap,
+               no 
+               Google Search.
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Maintainability:</strong> This principle encourages the upkeep of a project’s components, keeping them in sync
+                     during the project’s lifecycle. This principle participates in open source ecosystems,
+                     built on well-documented, thoroughly-tested, and widely-adopted technologies.</li>
+                  <li><strong>Usability:</strong> This principle ensures consistent, reliable, legible use of the project’s end-products.
+                     This principle supports reuse of materials outside of the project’s original context.
+                     This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            
+            <li>
+               No query strings: every entity in the site has a unique page with a simple URL that
+               will 
+               function on any domain or IP address.
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Usability:</strong> This principle ensures consistent, reliable, legible use of the project’s end-products.
+                     This principle supports reuse of materials outside of the project’s original context.
+                     This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            
+            <li>
+               Inclusion of data: every site should include a documented copy of the source data,
+               so that 
+               users of the site can repurpose the work easily.
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Lots of Copies Keep Stuff Safe (LOCKSS):</strong> This principle encourages copying resources such that some version of them might survive.</li>
+                  <li><strong>Reuse:</strong> This principle supports reuse of materials outside of the project’s original context.</li>
+                  <li><strong>Transparency:</strong> This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            
+            <li>
+               Massive redundancy: every page contains all the components it needs, so that it will
+               
+               function without the rest of the site if necessary, even though doing so means duplicating
+               
+               information across the site.
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Lots of Copies Keep Stuff Safe (LOCKSS):</strong> This principle encourages copying resources such that some version of them might survive.</li>
+               </ul>
+            </li>
+            
+            <li>
+               Graceful failure: every page should still function effectively even in the absence
+               of 
+               JavaScript or CSS support.
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Usability:</strong> This principle ensures consistent, reliable, legible use of the project’s end-products.
+                     This principle supports reuse of materials outside of the project’s original context.
+                     This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            </ol>
+         
+         <p>These principles are tempered by the following concessions:</p>
+         
+         <ol>
+            
+            <li>
+               Once a fully-working static site is achieved, it may be enhanced by the use of other
+               
+               services such as a server-side indexing tool (Solr, eXist) to support searching and
+               similar 
+               functionality.
+               <ul>
+                  <li><strong>Usability:</strong> This principle ensures consistent, reliable, legible use of the project’s end-products.
+                     This principle supports reuse of materials outside of the project’s original context.
+                     This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            
+            <li>
+               The use of an external library may be necessary to support a specific function that
+               is too 
+               complex to be coded locally (such as mapping or cryptography). Any such libraries
+               must be 
+               open-source and widely-used, and must not themselves have dependencies.
+               <ul>
+                  <li><strong>Usability:</strong> This principle ensures consistent, reliable, legible use of the project’s end-products.
+                     This principle supports reuse of materials outside of the project’s original context.
+                     This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            </ol>
+         </div>
+      
+      
+      <div id="release-management">
+         
+         <h2>Release management</h2>
+         
+         <p>Release management handles the public release of products. These principles apply
+            to release 
+            management:</p>
+         
+         <ol>
+            
+            <li>
+               Releases should be periodical and carefully planned. The “rolling release” model should
+               be 
+               avoided.
+               <ul>
+                  <li><strong>Provenance:</strong> This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Maintainability:</strong> This principle encourages the upkeep of a project’s components, keeping them in sync
+                     during the project’s lifecycle. This principle participates in open source ecosystems,
+                     built on well-documented, thoroughly-tested, and widely-adopted technologies.</li>
+               </ul>
+            </li>
+            
+            <li>
+               A release should only be made when the entire product set is coherent, consistent,
+               and 
+               complete (passing all validation and diagnostic tests).
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Maintainability:</strong> This principle encourages the upkeep of a project’s components, keeping them in sync
+                     during the project’s lifecycle. This principle participates in open source ecosystems,
+                     built on well-documented, thoroughly-tested, and widely-adopted technologies.</li>
+               </ul>
+            </li>
+            
+            <li>
+               Like editions of print works, each release of a web resource should be clearly identified
+               on 
+               every page by its build date and some kind of version number.
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Provenance:</strong> This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Maintainability:</strong> This principle encourages the upkeep of a project’s components, keeping them in sync
+                     during the project’s lifecycle. This principle participates in open source ecosystems,
+                     built on well-documented, thoroughly-tested, and widely-adopted technologies.</li>
+               </ul>
+            </li>
+            
+            <li>
+               Web resources should include detailed instructions for citation, so that end-users
+               can 
+               unambiguously cite a specific page from a specific edition.
+               <ul>
+                  <li><strong>Provenance:</strong> This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Usability:</strong> This principle ensures consistent, reliable, legible use of the project’s end-products.
+                     This principle supports reuse of materials outside of the project’s original context.
+                     This principle encourages discovery of and engagement with materials.</li>
+                  <li><strong>Transparency:</strong> This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            
+            <li>
+               URLs for individual resources within a digital publication should persist across editions.
+               
+               Any moved, retired, or deleted resources no longer available at a previously accessible
+               URL 
+               should be redirected appropriately.
+               <ul>
+                  <li><strong>Archiving:</strong> This principle anticipates long-term preservation of the projects’ components. This
+                     principle encourages copying resources such that some version of them might survive.
+                     This principle supports record-keeping of the history of the project.</li>
+                  <li><strong>Usability:</strong> This principle ensures consistent, reliable, legible use of the project’s end-products.
+                     This principle supports reuse of materials outside of the project’s original context.
+                     This principle encourages discovery of and engagement with materials.</li>
+                  <li><strong>Transparency:</strong> This principle encourages discovery of and engagement with materials.</li>
+               </ul>
+            </li>
+            </ol>
+         </div>
+      </body>
+</html>
