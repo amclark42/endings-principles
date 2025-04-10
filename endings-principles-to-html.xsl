@@ -59,14 +59,22 @@
         <!--  CSS  -->
         <style><![CDATA[
           body {
+            --my-border-color: blue;
             font-size: 1.15rem;
+          }
+          aside {
+            border: medium double var(--my-border-color);
+            margin: 1em 0;
+            padding: 0.25em 1em;
           }
           li {
             font-size: 1.25rem;
             margin-bottom: 0.75rem;
           }
           ol ul {
-            margin-top: 0.5rem;
+            border: thin solid var(--my-border-color);
+            margin: 0.5rem 1rem 1.5rem;
+            padding: 0.75em 1.5em;
           }
           li li {
             font-size: 1.15rem;
@@ -85,14 +93,54 @@
     <xsl:attribute name="id" select="data(.)"/>
   </xsl:template>
   
-  <xsl:template match="text">
+  <!--<xsl:template match="text">
     <xsl:apply-templates select="body"/>
-  </xsl:template>
+  </xsl:template>-->
   
   <xsl:template match="div">
     <div>
       <xsl:apply-templates select="@* | node()"/>
     </div>
+  </xsl:template>
+  
+  <!-- Show the heading first, then metadata from the TEI header -->
+  <xsl:template match="front">
+    <xsl:apply-templates/>
+    <aside>
+      <xsl:apply-templates select="/TEI/teiHeader//sourceDesc"/>
+    </aside>
+  </xsl:template>
+  
+  <xsl:template match="sourceDesc/bibl">
+    <p>
+      <xsl:apply-templates/>
+    </p>
+  </xsl:template>
+  
+  <xsl:template match="sourceDesc/bibl/*" priority="5">
+    <xsl:if test="preceding-sibling::*">
+      <br />
+    </xsl:if>
+    <xsl:next-match/>
+  </xsl:template>
+  
+  <xsl:template match="front/head[not(@type)]">
+    <h1>
+      <xsl:apply-templates/>
+      <br />
+      <small>
+        <xsl:apply-templates select="following-sibling::head[@type eq 'sub']">
+          <xsl:with-param name="show" select="true()"/>
+        </xsl:apply-templates>
+      </small>
+    </h1>
+  </xsl:template>
+  
+  <xsl:template match="front/head[@type eq 'sub']" priority="2">
+    <xsl:param name="show" select="false()" as="xs:boolean"/>
+    <xsl:if test="$show">
+      <xsl:apply-templates/>
+    </xsl:if>
   </xsl:template>
   
   <xsl:template match="body//head">
@@ -110,6 +158,12 @@
   <xsl:template match="ref[@target]">
     <a href="{data(@target)}">
       <xsl:apply-templates/>
+    </a>
+  </xsl:template>
+  
+  <xsl:template match="ptr[@target]">
+    <a href="{data(@target)}">
+      <xsl:value-of select="data(@target)"/>
     </a>
   </xsl:template>
   

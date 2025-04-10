@@ -12,13 +12,19 @@
         </author>
       </titleStmt>
       <publicationStmt>
-        <p>Publication Information</p>
+        <p>Encoded by Ash Clark in preparation for a panel on the Endings Principles. No changes were 
+          made to the text of the Principles. However, the TEI elements chosen to represent the HTML may 
+          not be exactly as the Principles’ creators intended them. Ash Clark is responsible for the 
+          added categorization of each principle.</p>
+        <p>The TEI file and accompanying materials are available under a 
+          <ref target="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY Attribution 4.0 
+          International License</ref>.</p>
       </publicationStmt>
       <sourceDesc>
         <bibl>
           <title>Endings Principles for Digital Longevity</title>
           <edition>Version 2.2.1</edition>
-          <date when="2023-03-03"/>
+          <date when="2023-03-03">2023-03-03</date>
           <author>
             <orgName>The Endings Project Team</orgName>
           </author>
@@ -70,6 +76,12 @@
         </taxonomy>
       </classDecl>
     </encodingDesc>
+    <revisionDesc>
+      <listChange>
+        <change when="2025-04-07">Encoded the Principles from the Endings Project website, and tagged 
+          them to create my own taxonomy.</change>
+      </listChange>
+    </revisionDesc>
   </teiHeader>
   <text>
     <front>
