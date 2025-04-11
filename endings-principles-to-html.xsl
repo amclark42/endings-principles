@@ -64,12 +64,27 @@
           }
           aside {
             border: medium double var(--my-border-color);
-            margin: 1em 0;
+            margin: 1em 1em 1.5em;
+            /*padding: 0.25em 1em;*/
+          }
+          details {
+            border-bottom: thin solid var(--my-border-color);
             padding: 0.25em 1em;
+          }
+          details:last-child {
+            border-bottom: none;
+          }
+          summary {
+            cursor: pointer;
+            font-weight: bold;
+            margin: 0.5em 0;
           }
           li {
             font-size: 1.25rem;
             margin-bottom: 0.75rem;
+          }
+          aside li {
+            font-size: 1.15rem;
           }
           ol ul {
             border: thin solid var(--my-border-color);
@@ -93,10 +108,6 @@
     <xsl:attribute name="id" select="data(.)"/>
   </xsl:template>
   
-  <!--<xsl:template match="text">
-    <xsl:apply-templates select="body"/>
-  </xsl:template>-->
-  
   <xsl:template match="div">
     <div>
       <xsl:apply-templates select="@* | node()"/>
@@ -105,9 +116,25 @@
   
   <!-- Show the heading first, then metadata from the TEI header -->
   <xsl:template match="front">
+    <xsl:variable name="teiHeader" select="/TEI/teiHeader"/>
     <xsl:apply-templates/>
     <aside>
-      <xsl:apply-templates select="/TEI/teiHeader//sourceDesc"/>
+      <details open="open">
+        <summary>Publication Statement</summary>
+        <p>Generated on <xsl:value-of select="current-date()"/> from a 
+          <a href="endings-principles-for-digital-longevity.xml">TEI encoding</a> of the Endings 
+          Principles.
+        </p>
+        <xsl:apply-templates select="$teiHeader//publicationStmt"/>
+      </details>
+      <details open="open">
+        <summary>Source Description</summary>
+        <xsl:apply-templates select="$teiHeader//sourceDesc"/>
+      </details>
+      <details open="open">
+        <summary>Revisions</summary>
+        <xsl:apply-templates select="$teiHeader/revisionDesc"/>
+      </details>
     </aside>
   </xsl:template>
   
@@ -141,6 +168,23 @@
     <xsl:if test="$show">
       <xsl:apply-templates/>
     </xsl:if>
+  </xsl:template>
+  
+  <xsl:template match="listChange">
+    <ul>
+      <xsl:apply-templates/>
+    </ul>
+  </xsl:template>
+  
+  <xsl:template match="change">
+    <li>
+      <strong>
+        <xsl:value-of select="@when"/>
+        <xsl:text>:</xsl:text>
+      </strong>
+      <xsl:text> </xsl:text>
+      <xsl:apply-templates/>
+    </li>
   </xsl:template>
   
   <xsl:template match="body//head">

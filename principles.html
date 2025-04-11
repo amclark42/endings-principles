@@ -11,12 +11,27 @@
           }
           aside {
             border: medium double var(--my-border-color);
-            margin: 1em 0;
+            margin: 1em 1em 1.5em;
+            /*padding: 0.25em 1em;*/
+          }
+          details {
+            border-bottom: thin solid var(--my-border-color);
             padding: 0.25em 1em;
+          }
+          details:last-child {
+            border-bottom: none;
+          }
+          summary {
+            cursor: pointer;
+            font-weight: bold;
+            margin: 0.5em 0;
           }
           li {
             font-size: 1.25rem;
             margin-bottom: 0.75rem;
+          }
+          aside li {
+            font-size: 1.15rem;
           }
           ol ul {
             border: thin solid var(--my-border-color);
@@ -38,22 +53,56 @@
       <p>Version 2.2.1, 2023-03-03</p>
       
       <aside>
-         
-         <p>
-            Endings Principles for Digital Longevity
-            <br />Version 2.2.1
-            <br />2023-03-03
-            <br />
-            The Endings Project Team
+         <details open="open">
+            <summary>Publication Statement</summary>
+            <p>Generated on 2025-04-10-04:00 from a 
+               <a href="endings-principles-for-digital-longevity.xml">TEI encoding</a> of the Endings 
+               Principles.
+               </p>
             
-            <br /><a href="https://endings.uvic.ca/principles.html">https://endings.uvic.ca/principles.html</a>
-            <br />
+            <p>Encoded by Ash Clark in preparation for a panel on the Endings Principles. No changes
+               were 
+               made to the text of the Principles. However, the TEI elements chosen to represent
+               the HTML may 
+               not be exactly as the Principles’ creators intended them. Ash Clark is responsible
+               for the 
+               added categorization of each principle.</p>
             
-            <p>Available under a <a href="https://creativecommons.org/licenses/by/4.0/deed.en">
-                  Creative Commons BY Attribution 4.0 International License</a>.</p>
+            <p>The TEI file and accompanying materials are available under a 
+               <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY Attribution 4.0 
+                  International License</a>.</p>
+            </details>
+         <details open="open">
+            <summary>Source Description</summary>
             
-            </p>
-         </aside>
+            <p>
+               Endings Principles for Digital Longevity
+               <br />Version 2.2.1
+               <br />2023-03-03
+               <br />
+               The Endings Project Team
+               
+               <br /><a href="https://endings.uvic.ca/principles.html">https://endings.uvic.ca/principles.html</a>
+               <br />
+               
+               <p>Available under a <a href="https://creativecommons.org/licenses/by/4.0/deed.en">
+                     Creative Commons BY Attribution 4.0 International License</a>.</p>
+               
+               </p>
+            </details>
+         <details open="open">
+            <summary>Revisions</summary>
+            
+            <ul>
+               
+               <li><strong>2025-04-10:</strong> Expanded the teiHeader to include more information about this 
+                  TEI file’s relationship to the Endings Principles.</li>
+               
+               <li><strong>2025-04-07:</strong> Encoded the Principles from the Endings Project website, and tagged 
+                  them to create my own taxonomy.</li>
+               </ul>
+            </details>
+      </aside>
       
       
       <p>We divide digital projects into five primary components:</p>

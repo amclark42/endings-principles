@@ -78,6 +78,8 @@
     </encodingDesc>
     <revisionDesc>
       <listChange>
+        <change when="2025-04-10">Expanded the <gi>teiHeader</gi> to include more information about this 
+          TEI file’s relationship to the Endings Principles.</change>
         <change when="2025-04-07">Encoded the Principles from the Endings Project website, and tagged 
           them to create my own taxonomy.</change>
       </listChange>
