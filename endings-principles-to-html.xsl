@@ -79,6 +79,10 @@
             font-weight: bold;
             margin: 0.5em 0;
           }
+          .front {
+            margin-top: 2em;
+            text-align: center;
+          }
           li {
             font-size: 1.25rem;
             margin-bottom: 0.75rem;
@@ -99,6 +103,10 @@
         <!--  Javascript  -->
       </head>
       <body>
+        <h1>
+          <xsl:apply-templates select="/TEI//titleStmt/title"/>
+        </h1>
+        <xsl:call-template name="show-teiHeader"/>
         <xsl:apply-templates select="TEI/text"/>
       </body>
     </html>
@@ -114,45 +122,28 @@
     </div>
   </xsl:template>
   
-  <!-- Show the heading first, then metadata from the TEI header -->
-  <xsl:template match="front">
-    <xsl:variable name="teiHeader" select="/TEI/teiHeader"/>
-    <xsl:apply-templates/>
-    <aside>
-      <details open="open">
-        <summary>Publication Statement</summary>
-        <p>Generated on <xsl:value-of select="current-date()"/> from a 
-          <a href="endings-principles-for-digital-longevity.xml">TEI encoding</a> of the Endings 
-          Principles.
-        </p>
-        <xsl:apply-templates select="$teiHeader//publicationStmt"/>
-      </details>
-      <details open="open">
-        <summary>Source Description</summary>
-        <xsl:apply-templates select="$teiHeader//sourceDesc"/>
-      </details>
-      <details open="open">
-        <summary>Revisions</summary>
-        <xsl:apply-templates select="$teiHeader/revisionDesc"/>
-      </details>
-    </aside>
-  </xsl:template>
-  
   <xsl:template match="sourceDesc/bibl">
     <p>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="* except note"/>
     </p>
+    <xsl:apply-templates select="note"/>
   </xsl:template>
   
   <xsl:template match="sourceDesc/bibl/*" priority="5">
-    <xsl:if test="preceding-sibling::*">
+    <xsl:if test="preceding-sibling::* and not(self::note)">
       <br />
     </xsl:if>
     <xsl:next-match/>
   </xsl:template>
   
+  <xsl:template match="front">
+    <div class="front">
+      <xsl:apply-templates/>
+    </div>
+  </xsl:template>
+  
   <xsl:template match="front/head[not(@type)]">
-    <h1>
+    <h2>
       <xsl:apply-templates/>
       <br />
       <small>
@@ -160,7 +151,7 @@
           <xsl:with-param name="show" select="true()"/>
         </xsl:apply-templates>
       </small>
-    </h1>
+    </h2>
   </xsl:template>
   
   <xsl:template match="front/head[@type eq 'sub']" priority="2">
@@ -188,9 +179,9 @@
   </xsl:template>
   
   <xsl:template match="body//head">
-    <h2>
+    <h3>
       <xsl:apply-templates select="@* | node()"/>
-    </h2>
+    </h3>
   </xsl:template>
   
   <xsl:template match="p">
@@ -250,6 +241,28 @@
  <!--
       NAMED TEMPLATES
    -->
+  
+  <xsl:template name="show-teiHeader">
+    <xsl:variable name="teiHeader" select="/TEI/teiHeader"/>
+    <aside>
+      <details open="open">
+        <summary>Publication Statement</summary>
+        <p>Generated on <xsl:value-of select="current-date()"/> from a 
+          <a href="endings-principles-for-digital-longevity.xml">TEI encoding</a> of the Endings 
+          Principles.
+        </p>
+        <xsl:apply-templates select="$teiHeader//publicationStmt"/>
+      </details>
+      <details open="open">
+        <summary>Source Description</summary>
+        <xsl:apply-templates select="$teiHeader//sourceDesc"/>
+      </details>
+      <details open="open">
+        <summary>Revisions</summary>
+        <xsl:apply-templates select="$teiHeader/revisionDesc"/>
+      </details>
+    </aside>
+  </xsl:template>
   
  <!--
       FUNCTIONS
